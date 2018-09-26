@@ -48,7 +48,7 @@ jQuery.ajaxTransport( "script", function( s ) {
 		var script, callback;
 		return {
 			send: function( _, complete ) {
-				script = jQuery( "<script>" )
+				script = jQuery("<script>")
 					.attr( s.scriptAttrs || {} )
 					.prop( { charset: s.scriptCharset, src: s.url } )
 					.on( "load error", callback = function( evt ) {
@@ -63,7 +63,7 @@ jQuery.ajaxTransport( "script", function( s ) {
 				document.head.appendChild( script[ 0 ] );
 			},
 			abort: function() {
-				if ( callback ) {
+			    if ( callback ) {
 					callback();
 				}
 			}

@@ -28,12 +28,13 @@ jQuery.fn.load = function( url, params, callback ) {
 	if ( isFunction( params ) ) {
 
 		// We assume that it's the callback
+
 		callback = params;
 		params = undefined;
 
 	// Otherwise, build a param string
 	} else if ( params && typeof params === "object" ) {
-		type = "POST";
+		type = 'POST';
 	}
 
 	// If we have elements to modify, make the request
@@ -63,6 +64,7 @@ jQuery.fn.load = function( url, params, callback ) {
 
 		// If the request succeeds, this function gets "data", "status", "jqXHR"
 		// but they are ignored because response was set above.
+
 		// If it fails, this function gets "jqXHR", "status", "error"
 		} ).always( callback && function( jqXHR, status ) {
 			self.each( function() {

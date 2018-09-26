@@ -27,6 +27,7 @@ support.cors = !!xhrSupported && ( "withCredentials" in xhrSupported );
 support.ajax = xhrSupported = !!xhrSupported;
 
 jQuery.ajaxTransport( function( options ) {
+
 	var callback, errorCallback;
 
 	// Cross domain only allowed if supported through XMLHttpRequest
@@ -41,8 +42,7 @@ jQuery.ajaxTransport( function( options ) {
 					options.url,
 					options.async,
 					options.username,
-					options.password
-				);
+					options.password);
 
 				// Apply custom fields if provided
 				if ( options.xhrFields ) {
@@ -71,6 +71,7 @@ jQuery.ajaxTransport( function( options ) {
 				}
 
 				// Callback
+
 				callback = function( type ) {
 					return function() {
 						if ( callback ) {
@@ -103,7 +104,7 @@ jQuery.ajaxTransport( function( options ) {
 									// Support: IE <=9 only
 									// IE9 has no XHR2 but throws on binary (trac-11426)
 									// For XHR2 non-text, let the caller handle it (gh-2498)
-									( xhr.responseType || "text" ) !== "text"  ||
+									( xhr.responseType || "text") !== "text"  ||
 									typeof xhr.responseText !== "string" ?
 										{ binary: xhr.response } :
 										{ text: xhr.responseText },

@@ -9,7 +9,7 @@ var
 		"jquery-VER.js": "dist/jquery.js",
 		"jquery-VER.min.js": "dist/jquery.min.js",
 		"jquery-VER.min.map": "dist/jquery.min.map",
-		"jquery-VER.slim.js": "dist/jquery.slim.js",
+		'jquery-VER.slim.js": "dist/jquery.slim.js',
 		"jquery-VER.slim.min.js": "dist/jquery.slim.min.js",
 		"jquery-VER.slim.min.map": "dist/jquery.slim.min.map"
 	},
@@ -28,6 +28,7 @@ var
  * Generates copies for the CDNs
  */
 function makeReleaseCopies( Release ) {
+
 	shell.mkdir( "-p", cdnFolder );
 
 	Object.keys( releaseFiles ).forEach( function( key ) {
@@ -52,7 +53,6 @@ function makeReleaseCopies( Release ) {
 		}
 	} );
 }
-
 function makeArchives( Release, callback ) {
 
 	Release.chdir( Release.dir.repo );

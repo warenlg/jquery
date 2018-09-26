@@ -3,10 +3,9 @@ define( [
 	"../var/isFunction",
 	"./var/nonce",
 	"./var/rquery",
-	"../ajax"
-], function( jQuery, isFunction, nonce, rquery ) {
+	"../ajax"], function( jQuery, isFunction, nonce, rquery ) {
 
-"use strict";
+'use strict';
 
 var oldCallbacks = [],
 	rjsonp = /(=)\?(?=&|$)|\?\?/;
@@ -34,7 +33,7 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 		);
 
 	// Handle iff the expected data type is "jsonp" or we have a parameter to set
-	if ( jsonProp || s.dataTypes[ 0 ] === "jsonp" ) {
+	if (jsonProp || s.dataTypes[ 0 ] === "jsonp") {
 
 		// Get callback name, remembering preexisting value associated with it
 		callbackName = s.jsonpCallback = isFunction( s.jsonpCallback ) ?
@@ -97,6 +96,7 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 
 		// Delegate to script
 		return "script";
+
 	}
 } );
 

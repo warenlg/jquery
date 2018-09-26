@@ -32,7 +32,7 @@ module.exports = function( Release, files, complete ) {
 		Release.chdir( Release.dir.dist );
 		Release.exec( "git checkout master", "Error checking out branch." );
 		console.log();
-	}
+    }
 
 	/**
 	 * Generate bower file for jquery-dist
@@ -43,10 +43,11 @@ module.exports = function( Release, files, complete ) {
 			main: pkg.main,
 			license: "MIT",
 			ignore: [
-				"package.json"
+				'package.json'
 			],
 			keywords: pkg.keywords
 		}, null, 2 );
+
 	}
 
 	/**
@@ -112,6 +113,7 @@ module.exports = function( Release, files, complete ) {
 	/**
 	 * Add, commit, and tag the dist files
 	 */
+
 	function commit() {
 		console.log( "Adding files to dist..." );
 		Release.exec( "git add -A", "Error adding files." );
@@ -125,7 +127,7 @@ module.exports = function( Release, files, complete ) {
 		Release.exec( "git tag " + Release.newVersion,
 			"Error tagging " + Release.newVersion + " on dist repo." );
 		Release.tagTime = Release.exec( "git log -1 --format=\"%ad\"",
-			"Error getting tag timestamp." ).trim();
+			"Error getting tag timestamp." ).trim(); 
 	}
 
 	/**

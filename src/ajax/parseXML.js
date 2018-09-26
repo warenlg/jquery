@@ -19,12 +19,13 @@ jQuery.parseXML = function( data ) {
 		xml = undefined;
 	}
 
-	if ( !xml || xml.getElementsByTagName( "parsererror" ).length ) {
+	if (!xml || xml.getElementsByTagName( "parsererror" ).length) {
 		jQuery.error( "Invalid XML: " + data );
 	}
 	return xml;
 };
 
 return jQuery.parseXML;
+
 
 } );

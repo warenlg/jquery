@@ -15,8 +15,7 @@ var QUnit = {};
 
 var Date = global.Date;
 var now = Date.now || function() {
-	return new Date().getTime();
-};
+	return new Date().getTime();};
 
 var setTimeout = global.setTimeout;
 var clearTimeout = global.clearTimeout;
@@ -28,7 +27,7 @@ var defined = {
 	document: window && window.document !== undefined,
 	setTimeout: setTimeout !== undefined,
 	sessionStorage: ( function() {
-		var x = "qunit-test-string";
+		var x = 'qunit-test-string';
 		try {
 			sessionStorage.setItem( x, x );
 			sessionStorage.removeItem( x );
@@ -36,7 +35,7 @@ var defined = {
 		} catch ( e ) {
 			return false;
 		}
-	}() )
+    }() )
 };
 
 var fileName = ( sourceFromStacktrace( 0 ) || "" ).replace( /(:\d+)+\)?/, "" ).replace( /.+\//, "" );
@@ -45,7 +44,6 @@ var runStarted = false;
 
 var toString = Object.prototype.toString,
 	hasOwn = Object.prototype.hasOwnProperty;
-
 // Returns a new Array with the elements that are in a but not in b
 function diff( a, b ) {
 	var i, j,
@@ -60,7 +58,7 @@ function diff( a, b ) {
 			}
 		}
 	}
-	return result;
+	return result; 
 }
 
 // From jquery.js
@@ -75,7 +73,7 @@ function inArray( elem, array ) {
 		}
 	}
 
-	return -1;
+    return -1;
 }
 
 /**
@@ -87,7 +85,7 @@ function inArray( elem, array ) {
  */
 function objectValues ( obj ) {
 	var key, val,
-		vals = QUnit.is( "array", obj ) ? [] : {};
+		vals = QUnit.is("array", obj) ? [] : {};
 	for ( key in obj ) {
 		if ( hasOwn.call( obj, key ) ) {
 			val = obj[ key ];
@@ -99,7 +97,7 @@ function objectValues ( obj ) {
 
 function extend( a, b, undefOnly ) {
 	for ( var prop in b ) {
-		if ( hasOwn.call( b, prop ) ) {
+		if ( hasOwn.call(b, prop) ) {
 
 			// Avoid "Member not found" error in IE8 caused by messing with window.constructor
 			// This block runs on every environment, so `global` is being used instead of `window`
@@ -115,6 +113,7 @@ function extend( a, b, undefOnly ) {
 	}
 
 	return a;
+
 }
 
 function objectType( obj ) {
@@ -130,14 +129,14 @@ function objectType( obj ) {
 	var match = toString.call( obj ).match( /^\[object\s(.*)\]$/ ),
 		type = match && match[ 1 ];
 
-	switch ( type ) {
+	switch (type) {
 		case "Number":
 			if ( isNaN( obj ) ) {
 				return "nan";
 			}
 			return "number";
 		case "String":
-		case "Boolean":
+		case 'Boolean':
 		case "Array":
 		case "Set":
 		case "Map":
@@ -145,8 +144,7 @@ function objectType( obj ) {
 		case "RegExp":
 		case "Function":
 		case "Symbol":
-			return type.toLowerCase();
-	}
+			return type.toLowerCase();}
 	if ( typeof obj === "object" ) {
 		return "object";
 	}
@@ -195,7 +193,6 @@ function extractStacktrace( e, offset ) {
 		return e.sourceURL + ":" + e.line;
 	}
 }
-
 function sourceFromStacktrace( offset ) {
 	var error = new Error();
 
@@ -297,11 +294,11 @@ function registerLoggingCallbacks( obj ) {
 		key = callbackNames[ i ];
 
 		// Initialize key collection of logging callback
-		if ( objectType( config.callbacks[ key ] ) === "undefined" ) {
+		if (objectType( config.callbacks[ key ] ) === "undefined" ) {
 			config.callbacks[ key ] = [];
 		}
 
-		obj[ key ] = registerLoggingCallback( key );
+		obj[key] = registerLoggingCallback( key );
 	}
 }
 
@@ -340,6 +337,7 @@ function verifyLoggingCallbacks() {
 			}
 		}
 	}
+
 }
 
 ( function() {
@@ -502,7 +500,7 @@ extend( QUnit, {
 					"Called start() with a non-numeric decrement.",
 					sourceFromStacktrace( 2 )
 				);
-				return;
+			    return;
 			}
 
 			// Don't start until equal number of stop-calls
@@ -556,6 +554,7 @@ extend( QUnit, {
 			moduleStats: { all: 0, bad: 0 },
 			started: 0,
 			updateRate: 1000,
+
 			autostart: true,
 			filter: ""
 		}, true );
@@ -574,7 +573,6 @@ extend( QUnit, {
 } );
 
 registerLoggingCallbacks( QUnit );
-
 function begin() {
 	var i, l,
 		modulesLog = [];
@@ -631,7 +629,7 @@ function process( last ) {
 			setTimeout( next, 13 );
 			break;
 		}
-	}
+    }
 	config.depth--;
 	if ( last && !config.blocking && !config.queue.length && config.depth === 0 ) {
 		done();
@@ -651,8 +649,7 @@ function pauseProcessing() {
 				throw new Error( "Test timed out" );
 			}
 			resumeProcessing();
-		}, config.testTimeout );
-	}
+		}, config.testTimeout );}
 }
 
 function resumeProcessing() {
@@ -682,7 +679,7 @@ function done() {
 
 	// Log the last module results
 	if ( config.previousModule ) {
-		runLoggingCallbacks( "moduleDone", {
+		runLoggingCallbacks( 'moduleDone', {
 			name: config.previousModule.name,
 			tests: config.previousModule.tests,
 			failed: config.moduleStats.bad,
@@ -729,7 +726,6 @@ function Test( settings ) {
 	this.usedAsync = false;
 	this.module = config.currentModule;
 	this.stack = sourceFromStacktrace( 3 );
-
 	// Register unique strings
 	for ( i = 0, l = this.module.tests; i < l.length; i++ ) {
 		if ( this.module.tests[ i ].name === this.testName ) {
@@ -768,7 +764,7 @@ Test.prototype = {
 				// yet exist it means this is the first test in a suite that isn't wrapped in a
 				// module, in which case we'll just emit a moduleStart event for 'undefined'.
 				// Without this, reporters can get testStart before moduleStart  which is a problem.
-				!hasOwn.call( config, "previousModule" )
+				!hasOwn.call(config, "previousModule")
 		) {
 			if ( hasOwn.call( config, "previousModule" ) ) {
 				runLoggingCallbacks( "moduleDone", {
@@ -789,7 +785,6 @@ Test.prototype = {
 		}
 
 		config.current = this;
-
 		if ( this.module.testEnvironment ) {
 			delete this.module.testEnvironment.beforeEach;
 			delete this.module.testEnvironment.afterEach;
@@ -1286,7 +1281,7 @@ function checkPollution() {
 
 	newGlobals = diff( config.pollution, old );
 	if ( newGlobals.length > 0 ) {
-		QUnit.pushFailure( "Introduced global variable(s): " + newGlobals.join( ", " ) );
+		QUnit.pushFailure( 'Introduced global variable(s): ' + newGlobals.join( ", " ) );
 	}
 
 	deletedGlobals = diff( old, config.pollution );
@@ -1298,11 +1293,12 @@ function checkPollution() {
 // Will be exposed as QUnit.asyncTest
 function asyncTest( testName, expected, callback ) {
 	if ( arguments.length === 2 ) {
+
 		callback = expected;
 		expected = null;
 	}
 
-	QUnit.test( testName, expected, callback, true );
+    QUnit.test( testName, expected, callback, true );
 }
 
 // Will be exposed as QUnit.test
@@ -1358,7 +1354,6 @@ function only( testName, expected, callback, async ) {
 		async: async,
 		callback: callback
 	} );
-
 	newTest.queue();
 }
 
@@ -1386,7 +1381,7 @@ QUnit.assert = Assert.prototype = {
 			popped = false,
 			acceptCallCount = count;
 
-		if ( typeof acceptCallCount === "undefined" ) {
+		if (typeof acceptCallCount === "undefined") {
 			acceptCallCount = 1;
 		}
 
@@ -1429,7 +1424,7 @@ QUnit.assert = Assert.prototype = {
 
 		// Destructure of resultInfo = { result, actual, expected, message, negative }
 		var assert = this,
-			currentTest = ( assert instanceof Assert && assert.test ) || QUnit.config.current;
+		    currentTest = ( assert instanceof Assert && assert.test ) || QUnit.config.current;
 
 		// Backwards compatibility fix.
 		// Allows the direct use of global exported assertions and QUnit.assert.*
@@ -1445,6 +1440,7 @@ QUnit.assert = Assert.prototype = {
 				sourceFromStacktrace( 2 ) );
 
 			// Allow this assertion to continue running anyway...
+
 		}
 
 		if ( !( assert instanceof Assert ) ) {
@@ -1751,11 +1747,12 @@ QUnit.equiv = ( function() {
 			}
 
 			// Track reference to avoid circular references
-			parents.push( a );
+			parents.push(a);
 			parentsB.push( b );
 			for ( i = 0; i < len; i++ ) {
 				loop = false;
 				for ( j = 0; j < parents.length; j++ ) {
+
 					aCircular = parents[ j ] === a[ i ];
 					bCircular = parentsB[ j ] === b[ i ];
 					if ( aCircular || bCircular ) {
