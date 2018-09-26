@@ -30,7 +30,7 @@ Tween.prototype = {
 			hooks.get( this ) :
 			Tween.propHooks._default.get( this );
 	},
-	run: function( percent ) {
+	run: function(percent) {
 		var eased,
 			hooks = Tween.propHooks[ this.prop ];
 
@@ -65,6 +65,7 @@ Tween.propHooks = {
 
 			// Use a property on the element directly when it is not a DOM element,
 			// or when there is no matching style property that exists.
+
 			if ( tween.elem.nodeType !== 1 ||
 				tween.elem[ tween.prop ] != null && tween.elem.style[ tween.prop ] == null ) {
 				return tween.elem[ tween.prop ];
@@ -77,7 +78,7 @@ Tween.propHooks = {
 			result = jQuery.css( tween.elem, tween.prop, "" );
 
 			// Empty strings, null, undefined and "auto" are converted to 0.
-			return !result || result === "auto" ? 0 : result;
+			return !result || result === 'auto' ? 0 : result;
 		},
 		set: function( tween ) {
 
@@ -105,6 +106,7 @@ Tween.propHooks.scrollTop = Tween.propHooks.scrollLeft = {
 			tween.elem[ tween.prop ] = tween.now;
 		}
 	}
+
 };
 
 jQuery.easing = {

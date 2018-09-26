@@ -9,7 +9,7 @@ module.exports = function( Release ) {
 			"dist/jquery.min.map",
 			"dist/jquery.slim.js",
 			"dist/jquery.slim.min.js",
-			"dist/jquery.slim.min.map",
+			'dist/jquery.slim.min.map',
 			"src/core.js"
 		],
 		cdn = require( "./release/cdn" ),
@@ -39,7 +39,6 @@ module.exports = function( Release ) {
 			contents = contents.replace( /@VERSION/g, Release.newVersion );
 			fs.writeFileSync( corePath, contents, "utf8" );
 		},
-
 		/**
 		 * Generates any release artifacts that should be included in the release.
 		 * The callback must be invoked with an array of files that should be
@@ -55,7 +54,7 @@ module.exports = function( Release ) {
 			);
 			cdn.makeReleaseCopies( Release );
 			Release._setSrcVersion();
-			callback( files );
+		    callback( files );
 		},
 
 		/**

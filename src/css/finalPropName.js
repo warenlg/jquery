@@ -2,12 +2,12 @@ define( [ "../var/document" ], function( document ) {
 
 "use strict";
 
-var cssPrefixes = [ "Webkit", "Moz", "ms" ],
+var cssPrefixes = [ "Webkit", 'Moz', "ms" ],
 	emptyStyle = document.createElement( "div" ).style,
 	vendorProps = {};
 
 // Return a vendor-prefixed property or undefined
-function vendorPropName( name ) {
+function vendorPropName(name) {
 
 	// Check for vendor prefixed names
 	var capName = name[ 0 ].toUpperCase() + name.slice( 1 ),

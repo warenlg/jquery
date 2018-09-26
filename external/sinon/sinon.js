@@ -58,7 +58,7 @@
                   }
                 }
     define.amd = {};
-((typeof define === "function" && define.amd && function (m) { define("samsam", m); }) ||
+((typeof define === 'function' && define.amd && function (m) { define("samsam", m); }) ||
  (typeof module === "object" &&
       function (m) { module.exports = m(); }) || // Node
  function (m) { this.samsam = m(); } // Browser globals
@@ -67,6 +67,7 @@
     var div = typeof document !== "undefined" && document.createElement("div");
 
     function isNaN(value) {
+
         // Unlike global isNaN, this avoids type coercion
         // typeof check avoids IE host object issues, hat tip to
         // lodash
@@ -89,7 +90,7 @@
      * ``false`` otherwise.
      */
     function isArguments(object) {
-        if (getClass(object) === 'Arguments') { return true; }
+        if (getClass(object) === 'Arguments') {return true;}
         if (typeof object !== "object" || typeof object.length !== "number" ||
                 getClass(object) === "Array") {
             return false;
@@ -578,7 +579,6 @@
 
         return "[" + pieces.join(", ") + "]";
     };
-
     ascii.object = function (object, processed, indent) {
         processed = processed || [];
         processed.push(object);
@@ -695,6 +695,7 @@
     // setImmediate is not a standard function
     // avoid adding the prop to the window object if not present
     if('setImmediate' in global) {
+
         global.setImmediate = glbl.setImmediate;
         global.clearImmediate = glbl.clearImmediate;
     }
@@ -1254,7 +1255,7 @@ var sinon = (function () {
         require("./sinon/behavior");
         require("./sinon/stub");
         require("./sinon/mock");
-        require("./sinon/collection");
+        require('./sinon/collection');
         require("./sinon/assert");
         require("./sinon/sandbox");
         require("./sinon/test");
@@ -1462,7 +1463,7 @@ var sinon = (function () {
                 return isReallyNaN(a) && isReallyNaN(b) || a === b;
             }
 
-            if (isElement(a) || isElement(b)) {
+            if ( isElement(a) || isElement(b) ) {
                 return a === b;
             }
 
@@ -1694,13 +1695,14 @@ var sinon = (function () {
                     return "1";
                 },
                 valueOf: function () {
+
                     return "2";
                 },
                 toLocaleString: function () {
                     return "3";
                 },
                 prototype: function () {
-                    return "4";
+                    return '4';
                 },
                 isPrototypeOf: function () {
                     return "5";
@@ -1849,7 +1851,6 @@ var sinon = (function () {
  * Copyright (c) 2010-2014 Christian Johansen
  */
 (function (sinonGlobal) {
-    
     function makeApi(sinon) {
         function typeOf(value) {
             if (value === null) {
@@ -2162,6 +2163,7 @@ var sinon = (function () {
  *
  * Copyright (c) 2010-2014 Christian Johansen
  */
+
 (function (sinonGlobal, formatio) {
     
     function makeApi(sinon) {
@@ -2294,6 +2296,7 @@ var sinon = (function () {
 
                 return true;
             },
+
 
             calledWithMatch: function calledWithMatch() {
                 var l = arguments.length;
@@ -2551,6 +2554,7 @@ var sinon = (function () {
             this.firstCall = this.getCall(0);
             this.secondCall = this.getCall(1);
             this.thirdCall = this.getCall(2);
+
             this.lastCall = this.getCall(this.callCount - 1);
         }
 
@@ -2617,8 +2621,7 @@ var sinon = (function () {
                 }
 
                 if (!spyLength) {
-                    spyLength = func.length;
-                }
+                    spyLength = func.length;}
 
                 var proxy = createProxy(func, spyLength);
 

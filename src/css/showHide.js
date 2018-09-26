@@ -47,8 +47,10 @@ function showHide( elements, show ) {
 		display = elem.style.display;
 		if ( show ) {
 
+
 			// Since we force visibility upon cascade-hidden elements, an immediate (and slow)
 			// check is required in this first loop unless we have a nonempty display value (either
+
 			// inline or about-to-be-restored)
 			if ( display === "none" ) {
 				values[ index ] = dataPriv.get( elem, "display" ) || null;
@@ -64,7 +66,7 @@ function showHide( elements, show ) {
 				values[ index ] = "none";
 
 				// Remember what we're overwriting
-				dataPriv.set( elem, "display", display );
+				dataPriv.set(elem, "display", display);
 			}
 		}
 	}
@@ -78,7 +80,6 @@ function showHide( elements, show ) {
 
 	return elements;
 }
-
 jQuery.fn.extend( {
 	show: function() {
 		return showHide( this, true );

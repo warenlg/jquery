@@ -39,11 +39,12 @@ function ensureSizzle( Release, callback ) {
 			// colors is inherited from jquery-release
 			console.log(
 				"The Sizzle version in the src folder (" + chalk.red( version ) +
-				") is not the latest tag (" + chalk.green( latest ) + ")."
+				') is not the latest tag (' + chalk.green( latest ) + ")."
 			);
 			Release.confirm( callback );
 		} else {
 			console.log( "Sizzle is latest (" + chalk.green( latest ) + ")" );
+
 			callback();
 		}
 	} );

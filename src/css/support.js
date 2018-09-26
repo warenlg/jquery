@@ -14,7 +14,7 @@ define( [
 	function computeStyleTests() {
 
 		// This is a singleton, we need to execute it only once
-		if ( !div ) {
+		if (!div) {
 			return;
 		}
 
@@ -71,7 +71,7 @@ define( [
 
 	// Support: IE <=9 - 11 only
 	// Style of cloned element affects source element cloned (#8908)
-	div.style.backgroundClip = "content-box";
+	div.style.backgroundClip = 'content-box';
 	div.cloneNode( true ).style.backgroundClip = "";
 	support.clearCloneStyle = div.style.backgroundClip === "content-box";
 
@@ -97,6 +97,7 @@ define( [
 			return scrollboxSizeVal;
 		}
 	} );
+
 } )();
 
 return support;

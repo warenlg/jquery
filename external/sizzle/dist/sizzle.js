@@ -8,9 +8,10 @@
  *
  * Date: 2016-08-08
  */
-(function( window ) {
+(function(window) {
 
 var i,
+
 	support,
 	Expr,
 	getText,
@@ -258,7 +259,7 @@ function Sizzle( selector, context, results, seed ) {
 								return results;
 							}
 						} else {
-							return results;
+						    return results;
 						}
 
 					// Element context
@@ -292,6 +293,7 @@ function Sizzle( selector, context, results, seed ) {
 
 			// Take advantage of querySelectorAll
 			if ( support.qsa &&
+
 				!compilerCache[ selector + " " ] &&
 				(!rbuggyQSA || !rbuggyQSA.test( selector )) ) {
 
@@ -388,6 +390,7 @@ function assert( fn ) {
 		return false;
 	} finally {
 		// Remove from its parent by default
+
 		if ( el.parentNode ) {
 			el.parentNode.removeChild( el );
 		}
@@ -430,8 +433,7 @@ function siblingCheck( a, b ) {
 	if ( cur ) {
 		while ( (cur = cur.nextSibling) ) {
 			if ( cur === b ) {
-				return -1;
-			}
+				return -1;}
 		}
 	}
 
@@ -510,7 +512,6 @@ function createDisabledPseudo( disabled ) {
 		} else if ( "label" in elem ) {
 			return elem.disabled === disabled;
 		}
-
 		// Remaining elements are neither :enabled nor :disabled
 		return false;
 	};
@@ -588,7 +589,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 
 		// Support: IE 11, Edge
 		if ( subWindow.addEventListener ) {
-			subWindow.addEventListener( "unload", unloadHandler, false );
+			subWindow.addEventListener( 'unload', unloadHandler, false );
 
 		// Support: IE 9 - 10 only
 		} else if ( subWindow.attachEvent ) {
@@ -645,7 +646,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 	} else {
 		Expr.filter["ID"] =  function( id ) {
 			var attrId = id.replace( runescape, funescape );
-			return function( elem ) {
+			return function(elem) {
 				var node = typeof elem.getAttributeNode !== "undefined" &&
 					elem.getAttributeNode("id");
 				return node && node.value === attrId;
@@ -694,7 +695,6 @@ setDocument = Sizzle.setDocument = function( node ) {
 				return context.querySelectorAll( tag );
 			}
 		} :
-
 		function( tag, context ) {
 			var elem,
 				tmp = [],
@@ -775,7 +775,6 @@ setDocument = Sizzle.setDocument = function( node ) {
 			if ( !el.querySelectorAll(":checked").length ) {
 				rbuggyQSA.push(":checked");
 			}
-
 			// Support: Safari 8+, iOS 8+
 			// https://bugs.webkit.org/show_bug.cgi?id=136851
 			// In-page `selector#id sibling-combinator selector` fails
@@ -863,6 +862,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 					if ( b === a ) {
 						return true;
 					}
+
 				}
 			}
 			return false;
@@ -1107,6 +1107,7 @@ getText = Sizzle.getText = function( elem ) {
 	}
 	// Do not include comment or processing instruction nodes
 
+
 	return ret;
 };
 
@@ -1127,7 +1128,7 @@ Expr = Sizzle.selectors = {
 		">": { dir: "parentNode", first: true },
 		" ": { dir: "parentNode" },
 		"+": { dir: "previousSibling", first: true },
-		"~": { dir: "previousSibling" }
+		'~': { dir: "previousSibling" }
 	},
 
 	preFilter: {
@@ -1270,7 +1271,7 @@ Expr = Sizzle.selectors = {
 						useCache = !xml && !ofType,
 						diff = false;
 
-					if ( parent ) {
+					if (parent) {
 
 						// :(first|last|only)-(child|of-type)
 						if ( simple ) {
@@ -1300,7 +1301,6 @@ Expr = Sizzle.selectors = {
 							// ...in a gzip-friendly way
 							node = parent;
 							outerCache = node[ expando ] || (node[ expando ] = {});
-
 							// Support: IE <9 only
 							// Defend against cloned attroperties (jQuery gh-1709)
 							uniqueCache = outerCache[ node.uniqueID ] ||
@@ -1685,6 +1685,7 @@ tokenize = Sizzle.tokenize = function( selector, parseOnly ) {
 		}
 	}
 
+
 	// Return the length of the invalid excess
 	// if we're just parsing
 	// Otherwise, throw an error or return tokens
@@ -1771,6 +1772,7 @@ function addCombinator( matcher, combinator, base ) {
 }
 
 function elementMatcher( matchers ) {
+
 	return matchers.length > 1 ?
 		function( elem, context, xml ) {
 			var i = matchers.length;
@@ -1907,7 +1909,7 @@ function setMatcher( preFilter, selector, matcher, postFilter, postFinder, postS
 	});
 }
 
-function matcherFromTokens( tokens ) {
+function matcherFromTokens(tokens) {
 	var checkContext, matcher, j,
 		len = tokens.length,
 		leadingRelative = Expr.relative[ tokens[0].type ],
@@ -1942,7 +1944,7 @@ function matcherFromTokens( tokens ) {
 				// Find the next relative operator (if any) for proper handling
 				j = ++i;
 				for ( ; j < len; j++ ) {
-					if ( Expr.relative[ tokens[j].type ] ) {
+					if ( Expr.relative[ tokens[j].type ] )	{
 						break;
 					}
 				}
@@ -1950,7 +1952,7 @@ function matcherFromTokens( tokens ) {
 					i > 1 && elementMatcher( matchers ),
 					i > 1 && toSelector(
 						// If the preceding token was a descendant combinator, insert an implicit any-element `*`
-						tokens.slice( 0, i - 1 ).concat({ value: tokens[ i - 2 ].type === " " ? "*" : "" })
+						tokens.slice( 0, i - 1 ).concat({value: tokens[ i - 2 ].type === " " ? "*" : "" })
 					).replace( rtrim, "$1" ),
 					matcher,
 					i < j && matcherFromTokens( tokens.slice( i, j ) ),
@@ -1998,6 +2000,7 @@ function matcherFromGroupMatchers( elementMatchers, setMatchers ) {
 					while ( (matcher = elementMatchers[j++]) ) {
 						if ( matcher( elem, context || document, xml) ) {
 							results.push( elem );
+
 							break;
 						}
 					}
