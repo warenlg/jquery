@@ -30,9 +30,7 @@ jQuery.extend( {
 			nType = elem.nodeType;
 
 		// Don't get/set attributes on text, comment and attribute nodes
-		if ( nType === 3 || nType === 8 || nType === 2 ) {
-			return;
-		}
+		if ( nType === 3 || nType === 8 || nType === 2 ) {return;}
 
 		// Fallback to prop when attributes are not supported
 		if ( typeof elem.getAttribute === "undefined" ) {

@@ -35,6 +35,7 @@ define( [
 
 "use strict";
 
+
 return jQuery;
 
 } );

@@ -25,8 +25,7 @@ function getAll( context, tag ) {
 		return jQuery.merge( [ context ], ret );
 	}
 
-	return ret;
-}
+	return ret;}
 
 return getAll;
 } );

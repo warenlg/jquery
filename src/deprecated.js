@@ -23,6 +23,7 @@ jQuery.fn.extend( {
 
 	delegate: function( selector, types, data, fn ) {
 		return this.on( types, selector, data, fn );
+
 	},
 	undelegate: function( selector, types, fn ) {
 

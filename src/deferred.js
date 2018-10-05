@@ -27,6 +27,7 @@ function adoptValue( value, resolve, reject, noValue ) {
 		} else if ( value && isFunction( ( method = value.then ) ) ) {
 			method.call( value, resolve, reject );
 
+
 		// Other non-thenables
 		} else {
 

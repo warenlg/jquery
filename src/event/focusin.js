@@ -30,7 +30,7 @@ if ( !support.focusin ) {
 				var doc = this.ownerDocument || this,
 					attaches = dataPriv.access( doc, fix );
 
-				if ( !attaches ) {
+				if ( !attaches) {
 					doc.addEventListener( orig, handler, true );
 				}
 				dataPriv.access( doc, fix, ( attaches || 0 ) + 1 );

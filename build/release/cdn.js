@@ -27,7 +27,7 @@ var
 /**
  * Generates copies for the CDNs
  */
-function makeReleaseCopies( Release ) {
+function makeReleaseCopies(Release) {
 	shell.mkdir( "-p", cdnFolder );
 
 	Object.keys( releaseFiles ).forEach( function( key ) {

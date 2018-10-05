@@ -20,7 +20,7 @@ define( [
 		elem = el || elem;
 
 		// Inline style trumps all
-		return elem.style.display === "none" ||
+		return elem.style.display === "none"||
 			elem.style.display === "" &&
 
 			// Otherwise, check computed style

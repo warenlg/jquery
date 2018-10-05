@@ -31,7 +31,7 @@ jQuery.fn.extend( {
 		return this.filter( function() {
 			var i = 0;
 			for ( ; i < l; i++ ) {
-				if ( jQuery.contains( this, targets[ i ] ) ) {
+				if ( jQuery.contains( this, targets[i] ) ) {
 					return true;
 				}
 			}

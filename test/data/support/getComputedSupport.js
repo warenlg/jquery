@@ -6,7 +6,7 @@ function getComputedSupport( support ) {
 		if ( typeof support[ prop ] === "function" ) {
 			result[ prop ] = support[ prop ]();
 		} else {
-			result[ prop ] = support[ prop ];
+			result[prop] = support[ prop ];
 		}
 	}
 

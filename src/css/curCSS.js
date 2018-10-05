@@ -26,7 +26,7 @@ function curCSS( elem, name, computed ) {
 	if ( computed ) {
 		ret = computed.getPropertyValue( name ) || computed[ name ];
 
-		if ( ret === "" && !isAttached( elem ) ) {
+		if ( ret === "" && !isAttached( elem ) ) { 
 			ret = jQuery.style( elem, name );
 		}
 

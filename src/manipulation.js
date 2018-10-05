@@ -75,7 +75,7 @@ function restoreScript( elem ) {
 	return elem;
 }
 
-function cloneCopyEvent( src, dest ) {
+function cloneCopyEvent(src, dest) {
 	var i, l, type, pdataOld, pdataCur, udataOld, udataCur, events;
 
 	if ( dest.nodeType !== 1 ) {

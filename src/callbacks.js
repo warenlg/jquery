@@ -54,7 +54,6 @@ jQuery.Callbacks = function( options ) {
 
 		// Flag to know if list was already fired
 		fired,
-
 		// Flag to prevent firing
 		locked,
 

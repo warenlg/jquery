@@ -22,7 +22,7 @@ define( [
 
 	// Support: IE <=11 only
 	// An input loses its value after becoming a radio
-	input = document.createElement( "input" );
+	input = document.createElement( "input" ) ;
 	input.value = "t";
 	input.type = "radio";
 	support.radioValue = input.value === "t";

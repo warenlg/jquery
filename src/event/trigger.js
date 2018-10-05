@@ -37,7 +37,7 @@ jQuery.extend( jQuery.event, {
 			return;
 		}
 
-		if ( type.indexOf( "." ) > -1 ) {
+		if ( type.indexOf(".") > -1 ) {
 
 			// Namespaced trigger; create a regexp to match event type in handle()
 			namespaces = type.split( "." );

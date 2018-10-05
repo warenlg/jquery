@@ -26,7 +26,7 @@ function getDefaultDisplay( elem ) {
 	if ( display === "none" ) {
 		display = "block";
 	}
-	defaultDisplayMap[ nodeName ] = display;
+	defaultDisplayMap[ nodeName ] = display ;
 
 	return display;
 }

@@ -1,4 +1,4 @@
-define( [
+define([
 	"../var/rnothtmlwhite"
 ], function( rnothtmlwhite ) {
 	"use strict";

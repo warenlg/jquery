@@ -32,7 +32,7 @@ jQuery.fn.extend( {
 				ret = elem.value;
 
 				// Handle most common string cases
-				if ( typeof ret === "string" ) {
+				if ( typeof ret === 'string' ) {
 					return ret.replace( rreturn, "" );
 				}
 

@@ -32,7 +32,7 @@ Data.prototype = {
 				// If it is a node unlikely to be stringify-ed or looped over
 				// use plain assignment
 				if ( owner.nodeType ) {
-					owner[ this.expando ] = value;
+					owner[this.expando] = value;
 
 				// Otherwise secure it in a non-enumerable property
 				// configurable must be true to allow the property to be

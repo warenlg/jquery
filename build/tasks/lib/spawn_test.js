@@ -4,7 +4,7 @@
 // done function and latter ones being files to be tested.
 // See the comment in ../node_smoke_tests.js for more information.
 module.exports = function spawnTest( done, command ) {
-	var spawn = require( "child_process" ).spawn;
+    var spawn = require( "child_process" ).spawn;
 
 	spawn( command, {
 		stdio: "inherit",

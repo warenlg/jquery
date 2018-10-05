@@ -38,9 +38,7 @@ jQuery.parseHTML = function( data, context, keepScripts ) {
 			base = context.createElement( "base" );
 			base.href = document.location.href;
 			context.head.appendChild( base );
-		} else {
-			context = document;
-		}
+		} else {context = document;}
 	}
 
 	parsed = rsingleTag.exec( data );

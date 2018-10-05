@@ -21,7 +21,7 @@ function buildFragment( elems, context, scripts, selection, ignored ) {
 		l = elems.length;
 
 	for ( ; i < l; i++ ) {
-		elem = elems[ i ];
+	    elem = elems[ i ];
 
 		if ( elem || elem === 0 ) {
 

@@ -13,6 +13,7 @@ jQuery.each( [
 	"ajaxError",
 	"ajaxSuccess",
 	"ajaxSend"
+
 ], function( i, type ) {
 	jQuery.fn[ type ] = function( fn ) {
 		return this.on( type, fn );

@@ -25,7 +25,7 @@ QUnit.config.requireExpects = true;
  * @param {string} key
  */
 QUnit.assert.expectJqData = function( env, elems, key ) {
-	var i, elem, expando;
+	var i, elem, expando ;
 
 	// As of jQuery 2.0, there will be no "cache"-data is
 	// stored and managed completely below the API surface

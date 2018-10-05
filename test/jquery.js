@@ -33,7 +33,7 @@
 		QUnit.config.urlConfig.push( {
 			id: "dev",
 			label: "Load unminified",
-			tooltip: "Load the development (unminified) jQuery file"
+			tooltip: 'Load the development (unminified) jQuery file'
 		} );
 	}
 

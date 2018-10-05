@@ -58,7 +58,7 @@ module.exports = function( grunt ) {
 	 * @param {String} path
 	 * @param {String} contents The contents to be written (including their AMD wrappers)
 	 */
-	function convert( name, path, contents ) {
+	function convert(name, path, contents) {
 		var amdName;
 
 		// Convert var modules

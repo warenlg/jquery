@@ -25,7 +25,7 @@ module.exports = function( grunt ) {
 				spawnTest( this.async(), "node \"test/node_smoke_tests/" + testFilePath + "\"" );
 			} );
 
-			nodeSmokeTests.push( taskName );
+			nodeSmokeTests.push(taskName);
 		} );
 
 	grunt.registerTask( "node_smoke_tests", nodeSmokeTests );

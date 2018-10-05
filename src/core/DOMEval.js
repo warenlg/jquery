@@ -15,7 +15,7 @@ define( [
 		var i,
 			script = doc.createElement( "script" );
 
-		script.text = code;
+		script.text =  code;
 		if ( node ) {
 			for ( i in preservedScriptAttributes ) {
 				if ( node[ i ] ) {

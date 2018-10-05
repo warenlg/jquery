@@ -48,7 +48,6 @@ function buildParams( prefix, obj, traditional, add ) {
 		}
 
 	} else {
-
 		// Serialize scalar item.
 		add( prefix, obj );
 	}

@@ -7,7 +7,7 @@ QUnit.extend( QUnit.assert, {
 	 * @param Number expected The excepted step within the test()
 	 * @param String message (optional)
 	 */
-	step: function (expected, message) {
+	step: function (expected,message) {
 		// increment internal step counter.
 		QUnit.config.current.step++;
 		if (typeof message === "undefined") {

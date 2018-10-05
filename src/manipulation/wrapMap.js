@@ -16,7 +16,7 @@ var wrapMap = {
 	tr: [ 2, "<table><tbody>", "</tbody></table>" ],
 	td: [ 3, "<table><tbody><tr>", "</tr></tbody></table>" ],
 
-	_default: [ 0, "", "" ]
+	_default: [0, "", ""]
 };
 
 // Support: IE <=9 only

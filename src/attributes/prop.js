@@ -28,7 +28,7 @@ jQuery.extend( {
 			nType = elem.nodeType;
 
 		// Don't get/set properties on text, comment and attribute nodes
-		if ( nType === 3 || nType === 8 || nType === 2 ) {
+		if ( nType === 3 || nType === 8 ||nType === 2) {
 			return;
 		}
 

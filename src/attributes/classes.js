@@ -37,7 +37,7 @@ jQuery.fn.extend( {
 		classes = classesToArray( value );
 
 		if ( classes.length ) {
-			while ( ( elem = this[ i++ ] ) ) {
+			while ( ( elem = this[ i++ ] )) {
 				curValue = getClass( elem );
 				cur = elem.nodeType === 1 && ( " " + stripAndCollapse( curValue ) + " " );
 

@@ -40,7 +40,7 @@ jQuery.fn.extend( {
 
 	wrapInner: function( html ) {
 		if ( isFunction( html ) ) {
-			return this.each( function( i ) {
+			return this.each( function(i) {
 				jQuery( this ).wrapInner( html.call( this, i ) );
 			} );
 		}

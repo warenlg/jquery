@@ -8,7 +8,7 @@ var fs = require( "fs" ),
  * Retrieve the latest tag of Sizzle from npm
  * @param {Function(string)} callback
  */
-function getLatestSizzle( callback ) {
+function getLatestSizzle(callback) {
 	npm.load( function( err, npm ) {
 		if ( err ) {
 			throw err;

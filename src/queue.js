@@ -26,7 +26,6 @@ jQuery.extend( {
 			return queue || [];
 		}
 	},
-
 	dequeue: function( elem, type ) {
 		type = type || "fx";
 

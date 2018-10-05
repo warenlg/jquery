@@ -35,9 +35,7 @@ function getData( data ) {
 	}
 
 	// Only convert to a number if it doesn't change the string
-	if ( data === +data + "" ) {
-		return +data;
-	}
+	if ( data === +data + "" ) {return +data;}
 
 	if ( rbrace.test( data ) ) {
 		return JSON.parse( data );

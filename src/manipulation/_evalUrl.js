@@ -12,7 +12,7 @@ jQuery._evalUrl = function( url ) {
 		type: "GET",
 		dataType: "script",
 		cache: true,
-		async: false,
+		async:false,
 		global: false,
 		"throws": true
 	} );

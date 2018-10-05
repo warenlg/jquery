@@ -49,7 +49,7 @@ var hasDuplicate, sortInput,
 
 			// U+0000 NULL becomes U+FFFD REPLACEMENT CHARACTER
 			if ( ch === "\0" ) {
-				return "\uFFFD";
+				return '\uFFFD';
 			}
 
 			// Control characters and (dependent upon position) numbers get escaped as code points

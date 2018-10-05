@@ -9,7 +9,7 @@ var cspLog = "";
  */
 var mocks = {
 	contentType: function( req, resp ) {
-		resp.writeHead( 200, {
+		resp.writeHead(200, {
 			"content-type": req.query.contentType
 		} );
 		resp.end( req.query.response );

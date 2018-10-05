@@ -7,7 +7,7 @@ var cssPrefixes = [ "Webkit", "Moz", "ms" ],
 	vendorProps = {};
 
 // Return a vendor-prefixed property or undefined
-function vendorPropName( name ) {
+function vendorPropName(name) {
 
 	// Check for vendor prefixed names
 	var capName = name[ 0 ].toUpperCase() + name.slice( 1 ),

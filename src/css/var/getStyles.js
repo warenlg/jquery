@@ -11,7 +11,6 @@ define( function() {
 		if ( !view || !view.opener ) {
 			view = window;
 		}
-
 		return view.getComputedStyle( elem );
 	};
 } );

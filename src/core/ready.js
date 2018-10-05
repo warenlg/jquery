@@ -19,7 +19,7 @@ jQuery.fn.ready = function( fn ) {
 		// happens at the time of error handling instead of callback
 		// registration.
 		.catch( function( error ) {
-			jQuery.readyException( error );
+		    jQuery.readyException( error );
 		} );
 
 	return this;

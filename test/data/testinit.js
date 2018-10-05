@@ -49,7 +49,7 @@ this.q = function() {
  * @example match("Check for something", "p", ["foo", "bar"]);
  */
 function match( message, selector, expectedIds, context ) {
-	var f = jQuery( selector, context ).get(),
+	var f = jQuery( selector, context ).get() ,
 		s = "",
 		i = 0;
 

@@ -33,7 +33,7 @@ function schedule() {
 	if ( inProgress ) {
 		if ( document.hidden === false && window.requestAnimationFrame ) {
 			window.requestAnimationFrame( schedule );
-		} else {
+	    } else {
 			window.setTimeout( schedule, jQuery.fx.interval );
 		}
 

@@ -20,6 +20,7 @@ jQuery.each( ( "blur focus focusin focusout resize scroll click dblclick " +
 	};
 } );
 
+
 jQuery.fn.extend( {
 	hover: function( fnOver, fnOut ) {
 		return this.mouseenter( fnOver ).mouseleave( fnOut || fnOver );

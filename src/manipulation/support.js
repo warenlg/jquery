@@ -16,7 +16,7 @@ define( [
 	// `name` and `type` must use .setAttribute for WWA (#14901)
 	input.setAttribute( "type", "radio" );
 	input.setAttribute( "checked", "checked" );
-	input.setAttribute( "name", "t" );
+	input.setAttribute( 'name', "t" );
 
 	div.appendChild( input );
 

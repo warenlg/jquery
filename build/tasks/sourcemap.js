@@ -9,7 +9,7 @@ module.exports = function( grunt ) {
 		// The map file is still generated for manual associations
 		// https://github.com/jquery/jquery/issues/1707
 		var text = fs.readFileSync( minLoc, "utf8" )
-			.replace( /\/\/# sourceMappingURL=\S+/, "" );
+		    .replace( /\/\/# sourceMappingURL=\S+/, "" );
 		fs.writeFileSync( minLoc, text );
 	} );
 };

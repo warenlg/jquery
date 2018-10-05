@@ -8,7 +8,7 @@ module.exports = function( grunt ) {
 	grunt.registerTask( "promises_aplus_tests",
 		[ "promises_aplus_tests:deferred", "promises_aplus_tests:when" ] );
 
-	grunt.registerTask( "promises_aplus_tests:deferred", function() {
+	grunt.registerTask( 'promises_aplus_tests:deferred', function() {
 		spawnTest( this.async(),
 			"\"" + __dirname + "/../../node_modules/.bin/promises-aplus-tests\"" +
 				" test/promises_aplus_adapters/deferred.js" +

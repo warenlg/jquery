@@ -28,7 +28,7 @@ var access = function( elems, fn, key, value, chainable, emptyGet, raw ) {
 			raw = true;
 		}
 
-		if ( bulk ) {
+		if (bulk) {
 
 			// Bulk operations run against the entire set
 			if ( raw ) {

@@ -7,7 +7,7 @@ define( [
 "use strict";
 
 var readyCallbacks = [],
-	whenReady = function( fn ) {
+	whenReady = function(fn) {
 		readyCallbacks.push( fn );
 	},
 	executeReady = function( fn ) {

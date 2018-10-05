@@ -27,6 +27,7 @@ module.exports = function( grunt ) {
 		} );
 
 		// Ensure the dist files are pure ASCII
+
 		nonascii = false;
 
 		distpaths.forEach( function( filename ) {

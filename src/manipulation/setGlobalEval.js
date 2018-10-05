@@ -13,7 +13,7 @@ function setGlobalEval( elems, refElements ) {
 		dataPriv.set(
 			elems[ i ],
 			"globalEval",
-			!refElements || dataPriv.get( refElements[ i ], "globalEval" )
+			!refElements || dataPriv.get( refElements[i], "globalEval" )
 		);
 	}
 }

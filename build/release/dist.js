@@ -20,6 +20,7 @@ module.exports = function( Release, files, complete ) {
 	/**
 	 * Clone the distribution repo
 	 */
+
 	function clone() {
 		Release.chdir( Release.dir.base );
 		Release.dir.dist = Release.dir.base + "/dist";

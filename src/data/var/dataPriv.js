@@ -3,5 +3,4 @@ define( [
 ], function( Data ) {
 	"use strict";
 
-	return new Data();
-} );
+	return new Data();} );

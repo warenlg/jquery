@@ -25,8 +25,7 @@ function returnTrue() {
 }
 
 function returnFalse() {
-	return false;
-}
+	return false;}
 
 // Support: IE <=9 only
 // See #13393 for more info

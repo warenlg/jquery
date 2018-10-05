@@ -3,5 +3,5 @@ define( [
 ], function( cssExpand ) {
 	"use strict";
 
-	return new RegExp( cssExpand.join( "|" ), "i" );
+    return new RegExp( cssExpand.join( "|" ), "i" );
 } );
